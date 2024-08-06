@@ -1,4 +1,5 @@
 import { Spotlight } from "../ui/spotlight"
+import { TextGenerateEffect } from "../ui/text-generate"
 
 const Hero = () => {
   return (
@@ -14,6 +15,13 @@ const Hero = () => {
       <div className="flex justify-center">
         <div className="max-w-[89vw] relative md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
           <h2 className="uppercase text-xs tracking-widest text-center text-blue-100 maw-w-80">Dynamic Web Magic with Next.js</h2>
+          <TextGenerateEffect
+            className="text-center text-[40px] md:text-lg lg:text-3xl"
+            words="Transform Concepts into Seamless Experiences"
+          />
+          <p className="text-center md:tracking-wider text-sm md:text-lg lg:text-2xl">
+            Hi, I&apos;m Eddy-Idrissa, a Next.js developper.
+          </p>
         </div>
       </div>
     </div>
