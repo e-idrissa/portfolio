@@ -43,7 +43,7 @@ export const BentoGridItem = ({
   return (
     <div
       className={cn(
-        "relative overflow-hidden row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4",
+        "relative overflow-hidden row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input border border-white/[0.1] order justify-between flex flex-col space-y-4",
         className
       )}
       style={{
@@ -77,13 +77,29 @@ export const BentoGridItem = ({
             <div className="absolute z-50 flex items-center justify-center text-50 font-bold"/>
           </BackgroundGradientAnimation>
         )}
-        <div className={cn(titleClassName, "group-hover/bento:-translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10")}>
+        <div className={cn(titleClassName, id === 2 && "mb-10 md:mb-20",  "group-hover/bento:-translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-3 p-5 lg:p-10")}>
           <div className="font-sans font-extralight text-[#c1c2d3] text-sm md:text-xs lg:text-base z-10 uppercase">{description}</div>
           <div className="font-sans font-bold text-lg lg:text-3xl max-w-96 z-10">{title}</div>
+          {id === 2 && (
+            <GridGlobe />
+          )}
+          {id === 3 && (
+            <div className="flex gap-2 lg:gap-3 w-fit absolute -right-3">
+              <div className="flex flex-col gap-2 lg:gap-3">
+                {['React.js', 'Next.js', 'React Native'].map((item) => (
+                  <span className="py-2 lg:py-3 lg:px-3 px-2 text-xs opacity-500 lg:opacity-100 rounded lg:rounded-lg text-center bg-[#10132e] border border-transparent hover:border-white/[0.08] transition" key={item}>{item}</span>
+                ))}
+                <span className="py-4 lg:py-5 px-3 rounded lg:rounded-lg text-center bg-[#10132e] border border-transparent"/>
+              </div>
+              <div className="flex flex-col gap-2 lg:gap-3">
+                <span className="py-4 lg:py-5 px-3 rounded lg:rounded-lg text-center bg-[#10132e] border border-transparent"/>
+                {['React.js', 'Next.js', 'React Native'].map((item) => (
+                  <span className="py-2 lg:py-3 lg:px-3 px-2 text-xs opacity-500 lg:opacity-100 rounded lg:rounded-lg text-center bg-[#10132e] border border-transparent hover:border-white/[0.08] transition" key={item}>{item}</span>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
-        {id === 2 && (
-          <GridGlobe />
-        )}
       </div>
     </div>
   );

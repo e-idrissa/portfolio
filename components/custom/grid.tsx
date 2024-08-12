@@ -1,5 +1,6 @@
 import { gridItems } from "@/data";
 import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
+import { cn } from "@/lib/utils";
 
 const Grid = () => {
   return (
@@ -12,7 +13,7 @@ const Grid = () => {
           title={title}
           titleClassName={titleClassName}
           description={description}
-          className={className}
+          className={cn(className, id === 3 && "py-0 md:py-5")}
           img={img}
           imgClassName={imgClassName}
           spareImg={spareImg}
